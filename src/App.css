@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+:root {
+  --gcc-blue: #1a3c5e;
+  --gcc-green: #1a7a4a;
+  --gcc-light: #e8f0fe;
+  --gcc-accent: #f7c948;
+  --sidebar-w: 240px;
+}
