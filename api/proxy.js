@@ -81,9 +81,12 @@ function parseHtmlResponse(html, planNum) {
   try {
     // Extract all <td> cell values
     const tdMatches = html.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
-    const cells = tdMatches.map((td) =>
-      td.replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim()
-    ).filter(c => c.length > 0);
+    const cells = tdMatches.map((td) => {
+      let clean = td.replace(/<script[\s\S]*?<\/script>/gi, "");
+      clean = clean.replace(/<[^>]+>/g, " ");
+      clean = clean.replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+      return clean;
+    }).filter(c => c.length > 0);
 
     // Find row containing the plan number
     const idx = cells.findIndex((c) =>
@@ -119,3 +122,4 @@ function parseHtmlResponse(html, planNum) {
 
   return result;
 }
+
