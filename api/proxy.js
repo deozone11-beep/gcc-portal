@@ -97,14 +97,14 @@ function parseHtmlResponse(html, planNum) {
       result.rawFound = true;
       // Chennai Corp BPA table structure (columns in order):
       // S.No | PlanSubmissionNo | ApplicantName | MobileNo | Address | ApplicationDate | PlotArea | BuildingType | Status | BANumber
-      result.applicantName   = cells[idx + 2] || cells[idx + 1] || "";
-      result.mobileNo        = cells[idx + 3] || "";
-      result.address         = cells[idx + 4] || "";
-      result.applicationDate = cells[idx + 5] || "";
-      result.plotArea        = cells[idx + 6] || "";
-      result.buildingType    = cells[idx + 7] || "";
-      result.applicationStatus = cells[idx + 8] || "";
-      result.baNumber        = cells[idx + 9] || "";
+result.applicationDate  = cells[idx + 1] || "";
+result.applicantName    = cells[idx + 2] || "";
+result.mobileNo         = cells[idx + 3] || "";
+result.address          = cells[idx + 4] || "";
+result.buildingType     = cells[idx + 5] || "";
+result.applicationStatus = cells[idx + 6] || "";
+result.baNumber         = "";
+result.plotArea         = "";
 
       // Zone/Ward from page content
       const zoneMatch = html.match(/Zone\s*[:\-]\s*(\w+)/i);
