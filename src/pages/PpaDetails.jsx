@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import * as XLSX from "xlsx";
 import "./PpaDetails.css";
 
-const PROXY_URL = "https://gcc-portal-tau.vercel.app/api/proxy";
+const PROXY_URL = "/api/proxy";
 const ERP_URL = "https://erp.chennaicorporation.gov.in/bpa/citizen/registerReport.action";
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
