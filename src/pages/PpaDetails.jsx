@@ -107,7 +107,7 @@ export default function PpaDetails() {
       allResults.push(result);
       setResults([...allResults]);
       setProgress(Math.round(((i + 1) / total) * 100));
-      if (i < total - 1) await sleep(800);
+      if (i < total - 1) await sleep(300);
     }
     setRunning(false);
   }
