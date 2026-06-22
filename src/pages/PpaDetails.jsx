@@ -75,10 +75,11 @@ export default function PpaDetails() {
         const ws = wb.Sheets[wb.SheetNames[0]];
         const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
         const nums = [];
-        rows.forEach((row) => row.forEach((cell) => {
-          const val = String(cell || "").trim();
-          if (/^PPA\/.+\/.+\/.+$/i.test(val)) nums.push(val);
-        }));
+        rows.forEach((row, index) => {
+          if (index === 0) return; // First row skip
+          const val = String(row[0] || "").trim();
+          if (val) nums.push(val);
+        });
         if (nums.length === 0) {
           alert("No PPA numbers found! Format: PPA/WDCN15/02117/2024");
         } else {
