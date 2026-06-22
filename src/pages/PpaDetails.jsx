@@ -157,7 +157,8 @@ export default function PpaDetails() {
         <input
           className="text-input"
           type="text"
-          value={sessionId}
+          //value={sessionId} 
+          value=5BB1415B0D77CDD19838C1B781B84E9D.node2
           onChange={(e) => setSessionId(e.target.value)}
           placeholder="e.g. 5BB1415B0D77CDD19838C1B781B84E9D.node2"
         />
